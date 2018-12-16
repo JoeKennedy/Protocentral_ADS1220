@@ -126,6 +126,8 @@ private:
       void set_oper_mode(int oper_mode)
       void select_mux_channels(int channels_conf);
       void set_conv_mode_single_shot(void);
+      void set_drdy_mode_dout_drdy_also(void);
+      void set_drdy_mode_drdy_only(void);
       int32_t Read_SingleShot_WaitForData(void);
       int32_t Read_SingleShot_SingleEnded_WaitForData(uint8_t channel_no);
 };

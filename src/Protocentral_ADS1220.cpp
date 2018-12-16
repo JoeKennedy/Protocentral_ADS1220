@@ -155,6 +155,18 @@ void Protocentral_ADS1220::set_conv_mode_single_shot(void)
     writeRegister(CONFIG_REG1_ADDRESS,m_config_reg1);
 }
 
+void Protocentral_ADS1220::set_drdy_mode_dout_drdy_also(void)
+{
+    m_config_reg3 |= _BV(1);
+    writeRegister(CONFIG_REG3_ADDRESS,m_config_reg3);
+}
+
+void Protocentral_ADS1220::set_drdy_mode_drdy_only(void)
+{
+    m_config_reg3 &= ~_BV(1);
+    writeRegister(CONFIG_REG3_ADDRESS,m_config_reg3);
+}
+
 void Protocentral_ADS1220::set_data_rate(int datarate)
 {
     m_config_reg1 &= ~REG_CONFIG1_DR_MASK;
