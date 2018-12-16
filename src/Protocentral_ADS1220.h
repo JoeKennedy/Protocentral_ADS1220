@@ -82,6 +82,8 @@
 #define MUX_SE_CH2      0xA0
 #define MUX_SE_CH3      0xB0
 
+#define MUX_CAL_OFFSET  0xE0
+
 #define _BV(bit) (1<<(bit))
 
 class Protocentral_ADS1220
