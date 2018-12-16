@@ -176,6 +176,13 @@ void Protocentral_ADS1220::set_pga_gain(int pgagain)
     writeRegister(CONFIG_REG0_ADDRESS,m_config_reg0);
 }
 
+void Protocentral_ADS1220::set_oper_mode(int oper_mode)
+{
+    m_config_reg1 &= ~REG_CONFIG1_MODE_MASK;
+    m_config_reg1 |= oper_mode ;
+    writeRegister(CONFIG_REG1_ADDRESS,m_config_reg1);
+}
+
 uint8_t * Protocentral_ADS1220::get_config_reg()
 {
     static uint8_t config_Buff[4];

@@ -38,9 +38,14 @@
 #define CONFIG_REG2_ADDRESS 0x02
 #define CONFIG_REG3_ADDRESS 0x03
 
+#define REG_CONFIG1_MODE_MASK     0x18
 #define REG_CONFIG1_DR_MASK       0xE0
 #define REG_CONFIG0_PGA_GAIN_MASK 0x0E
 #define REG_CONFIG0_MUX_MASK      0xF0
+
+#define MODE_NORMAL     0x00
+#define MODE_DUTY_CYCLE 0x08
+#define MODE_TURBO      0x10
 
 #define DR_20SPS    0x00
 #define DR_45SPS    0x20
@@ -116,6 +121,7 @@ private:
       void Single_shot_mode_ON(void);
       void set_data_rate(int datarate);
       void set_pga_gain(int pgagain);
+      void set_oper_mode(int oper_mode)
       void select_mux_channels(int channels_conf);
       void set_conv_mode_single_shot(void);
       int32_t Read_SingleShot_WaitForData(void);
